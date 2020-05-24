@@ -11,9 +11,10 @@ jobs:
 
     steps:
     - name: Build  
-      - uses: actions/checkout@v2
-      - run: npm install
-      - run: npx shadow-cljs release :app
+      uses: actions/checkout@v2
+      run: |
+        npm install
+        npx shadow-cljs release :app
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
