@@ -4,7 +4,7 @@
             [reagent.dom :as rdom]))
 
 (def app-config #js {:width 500 :height 200 :backgroundColor 0x2c3e50})
-(defonce app (new (.-Application PIXI) app-config))
+(defonce ^js app (new (.-Application PIXI) app-config))
 (defonce bunnies (atom []))
 
 ;; (set! js/window.app app)
