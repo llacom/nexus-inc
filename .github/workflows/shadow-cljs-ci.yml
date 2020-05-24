@@ -4,6 +4,8 @@ on:
   push:
   pull_request:
 
+
+    
 jobs:
   build:
 
@@ -13,3 +15,11 @@ jobs:
     - uses: actions/checkout@v2
     - run: npm install
     - run: npx shadow-cljs release :app
+
+  deploy:
+    steps:
+    - name: GitHub Pages
+      uses: crazy-max/ghaction-github-pages@v2.0.1
+      with:
+        # Build directory to deploy
+        build_dir: public
