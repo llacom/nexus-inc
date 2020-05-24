@@ -3,7 +3,7 @@
             [re-frame.core :as rf]))
 
 (defn app []
-  [:h1 "Nexus Inc"])
+  [:h1 "Nexus Inc 2"])
 
 (defn ^:dev/before-load stop []
   nil)
