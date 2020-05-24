@@ -10,11 +10,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - run: npm install
-    - run: npx shadow-cljs release :app
-    - name: GitHub Pages
-      uses: crazy-max/ghaction-github-pages@v2.0.1
+    - name: Build  
+      - uses: actions/checkout@v2
+      - run: npm install
+      - run: npx shadow-cljs release :app
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
-        # Build directory to deploy
-        build_dir: public
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages # The branch the action should deploy to.
+        FOLDER: public # The folder the action should deploy
